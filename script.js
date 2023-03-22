@@ -36,7 +36,12 @@ posts.forEach((post, index) => {
     </a>
   `;
   postList.appendChild(postPreview);
+
+  // Add event listener to the blog post preview link
+  const postLink = postPreview.querySelector('a');
+  postLink.addEventListener('click', showPost);
 });
+
 
 // Define a function to handle the click event on the blog post previews
 function showPost(event) {
@@ -47,11 +52,6 @@ function showPost(event) {
   window.location.href = `post.html?title=${post.title}&subtitle=${post.subtitle}&body=${post.body}&date=${post.date}`;
 }
 
-// Add event listeners to the blog post preview links
-const postLinks = document.querySelectorAll('.post-preview a');
-postLinks.forEach(link => {
-link.addEventListener('click', showPost);
-});
 
 // Define a function to display the complete blog post
 function displayPost() {
@@ -68,7 +68,7 @@ const postDate = document.querySelector('#post-date');
 postTitle.textContent = title;
 postSubtitle.textContent = subtitle;
 postBody.textContent = body;
-postDate.textContent = Published on ${date};
+postDate.textContent = "Published on ${date}";
 }
 
 // Call the displayPost function when the post.html page loads
