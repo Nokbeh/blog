@@ -25,11 +25,11 @@ const posts = [
 ];
 
 // Loop through the posts array and create a new HTML element for each post
-posts.forEach(post => {
+posts.forEach((post, index) => {
   const postPreview = document.createElement('li');
   postPreview.classList.add('post-preview');
   postPreview.innerHTML = `
-    <a href="post.html">
+    <a href="#" data-index="${index}">
       <h3>${post.title}</h3>
       <p>${post.subtitle}</p>
       <p>${post.date}</p>
@@ -37,6 +37,44 @@ posts.forEach(post => {
   `;
   postList.appendChild(postPreview);
 });
+
+// Define a function to handle the click event on the blog post previews
+function showPost(event) {
+  event.preventDefault();
+  const index = event.target.getAttribute('data-index');
+  const post = posts[index];
+  // Navigate to the complete blog page with the selected post
+  window.location.href = `post.html?title=${post.title}&subtitle=${post.subtitle}&body=${post.body}&date=${post.date}`;
+}
+
+// Add event listeners to the blog post preview links
+const postLinks = document.querySelectorAll('.post-preview a');
+postLinks.forEach(link => {
+link.addEventListener('click', showPost);
+});
+
+// Define a function to display the complete blog post
+function displayPost() {
+const title = decodeURIComponent(window.location.search.split('=')[1]);
+const subtitle = decodeURIComponent(window.location.search.split('&')[1].split('=')[1]);
+const body = decodeURIComponent(window.location.search.split('&')[2].split('=')[1]);
+const date = decodeURIComponent(window.location.search.split('&')[3].split('=')[1]);
+
+const postTitle = document.querySelector('#post-title');
+const postSubtitle = document.querySelector('#post-subtitle');
+const postBody = document.querySelector('#post-body');
+const postDate = document.querySelector('#post-date');
+
+postTitle.textContent = title;
+postSubtitle.textContent = subtitle;
+postBody.textContent = body;
+postDate.textContent = Published on ${date};
+}
+
+// Call the displayPost function when the post.html page loads
+if (window.location.pathname === '/post.html') {
+displayPost();
+}
 
 // Define a function to get the search input value and filter the blog post previews
 function searchPosts() {
