@@ -2,6 +2,7 @@ console.log('Script file loaded.');
 
 const postList = document.querySelector('#post-list');
 
+
 // Define an array of blog post objects
 const posts = [
   {
@@ -24,12 +25,20 @@ const posts = [
   }
 ];
 
+function displayPost() {
+  const title = decodeURIComponent(window.location.search.split('=')[1]);
+  console.log('title:', title);
+  const subtitle = decodeURIComponent(window.location.search.split('&')[1].split('=')[1]);
+  console.log('subtitle:', subtitle);
+  // rest of the function code...
+}
+
 // Loop through the posts array and create a new HTML element for each post
 posts.forEach((post, index) => {
   const postPreview = document.createElement('li');
   postPreview.classList.add('post-preview');
   postPreview.innerHTML = `
-    <a href="#" data-index="${index}">
+    <a href="post.html" data-index="${index}">
       <h3>${post.title}</h3>
       <p>${post.subtitle}</p>
       <p>${post.date}</p>
@@ -48,6 +57,7 @@ function showPost(event) {
   event.preventDefault();
   const index = event.target.getAttribute('data-index');
   const post = posts[index];
+  
   // Navigate to the complete blog page with the selected post
   window.location.href = `post.html?title=${post.title}&subtitle=${post.subtitle}&body=${post.body}&date=${post.date}`;
 }
@@ -68,7 +78,7 @@ const postDate = document.querySelector('#post-date');
 postTitle.textContent = title;
 postSubtitle.textContent = subtitle;
 postBody.textContent = body;
-postDate.textContent = "Published on ${date}";
+postDate.textContent = `Published on ${date}`;
 }
 
 // Call the displayPost function when the post.html page loads
