@@ -2,74 +2,121 @@
 <html>
 
 <head>
-
-  <title>Nokbeh Millik</title>
-  
+ <title>Nokbeh Millik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron&display=swap" rel="stylesheet">
  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
+    
     header {
       margin: 0 auto;
     }
   
-  </style>
+body {
+  font-family: 'Michroma', sans-serif;
+}
+  ault styles for all screen sizes */
+body {
+  background-color: #010101;
+  color: #F2F3F5;
+  font-family: 'Michroma', sans-serif;
+}
 
+header, table, div {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* Media query for screens larger than 400px */
+@media screen and (min-width: 400px) {
+  header, table, div {
+    max-width: 700px;
+  }
+}
+
+  </style>
 
 </head>
 
 
-<body style="background-color: floralwhite;">
+<body style="background-color: #010101; color: #F2F3F5;">
 
-  <header align= center style="width:500px; text-align: center;">
+  <header align= center style="width:100%; text-align: center; ">
     <h1>Nokbeh Millik</h1>
-    <p>Hello! Nice to see you dropping by. I am learning to code. <ins><br><b>Currently mastering HTML.</b></ins>As of now, this site is 100% built on HTML as you can see. Obviously! I'm on my day 2 of learning to code. </p>
+    <p>Hello! Nice to see you dropping by. I am learning to code. <ins><b>Currently mastering HTML.</b></ins>As of now, this site is 100% built on HTML as you can see. Obviously! I'm on my day 2 of learning to code. </p>
   </header>
 
 <div align= center>
-  <table width= 500px border= 1px>
-  <tr bgcolor=lightgrey height= 35px>
+  <table max-width=100%  border= 1px style="margin-top: 20px;">
+  <tr bgcolor=lightgrey height= 35px style="color:#010101">
     <th colspan=4>Some Quick Links To Help You Out</th>
   </tr>
 
-  <tr height= 30px align=center>
-    <td width=125px bgcolor= lightgreen><a href=tables.html>Tables Practice</a></td>
-    <td width=125px bgcolor=lightblue><a href=forms.html>Forms Practice</a></td>
-    <td width=125px bgcolor= lightgreen><a href=projects.html>Projects</a></td>
-    <td width=125px bgcolor=lightblue><a href=blogs.html>Blogs</a></td>
+  <tr height= auto align=center>
+    <td max-width=100% bgcolor= lightgreen><a href=tables.html>Tables Practice</a></td>
+    <td max-width=100% bgcolor=lightblue><a href=forms.html>Forms Practice</a></td>
+    <td max-width=100% bgcolor= lightgreen><a href=projects.html>Projects</a></td>
+    <td max-width=100% bgcolor=lightblue><a href=blogs.html>Blogs</a></td>
   </tr>
   </table>
 </div>
 
-<header align="center" style="background-color: lightyellow; text-align: center; width: 500px;">
+<header align="center" style="text-align: center; max-width: 100%;margin-top: 20px;">
 <h1>Recent Blogs</h1>
 </header>
 
-<table align=center width=500px>
+<table align=center style="text-align: center;" max-width=100%>
   <tr>
-    <td><a href=blogs/blog1.html><b>Title 1</b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
+    <td><a href=blogs/blog1.html><b><h2>Title 1</h2></b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
   </tr>
    <tr>
-    <td><a href=blogs/blog2.html><b>Title 2</b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
+    <td style="align: center;"><a href=blogs/blog2.html><b><h2>Title 2</h2></b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
   </tr>
    <tr>
-    <td><a href=blogs/blog3.html><b>Title 3</b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
+    <td><a href=blogs/blog3.html><b><h2>Title 3</h2></b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
   </tr>
    <tr>
-    <td><a href=blogs/blog4.html><b>Title 4</b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
+    <td><a href=blogs/blog4.html><b><h2>Title 4</h2></b></a><br> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</td>
   </tr>
 
 </table>
 
-<div style="display: flex; flex-direction: column; align-items: center; width: 500px; margin: 0 auto;">
+<div max-width=100% style="display: flex; flex-direction: column; align-items: center;  margin: 0 auto;">
   <div style="text-align: center;">
     <h3><a href="all-blogs.html">  Read all blogs</a></h3>
-  <div style="display: flex; justify-content: center;">
-    <iframe style="width: 500px; height: 600px;" src="https://www.bing.com" scrolling="no"></iframe>
-  </div>
 </div>
 
-
+  <footer style="margin-top: 50px;"> &copy;2023 made with ❤ by <a href="">Nokbeh Millik</a></footer>
 
 </body>
 
